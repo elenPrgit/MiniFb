@@ -8,7 +8,7 @@ class Bootstrap {
 	public function __construct($request){
 		$this->request = $request;
 		if($this->request['controller'] == ""){
-			$this->constroller = "home";
+			$this->controller = "home";
 		} else {
 			$this->controller = $request["controller"];
 		}

@@ -9,7 +9,7 @@ define("DB_NAME", "shareboard");
 
 //define url
 
-define("ROOT_PATH", "/shareboard/");
+define("ROOT_PATH", "/miniFb/");
 define("ROOT_URL", "http://localhost/miniFb/");
 
 

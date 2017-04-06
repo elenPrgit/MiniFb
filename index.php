@@ -6,6 +6,7 @@
 require('config.php');
 session_start();
 require 'classes/Bootstrap.php';
+require 'classes/Messages.php';
 require 'classes/Controller.php';
 require 'classes/Model.php';
 

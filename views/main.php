@@ -48,6 +48,7 @@
 
     <div class="container">
 		 <div class="starter-template">
+      <?php Messages::display(); ?>
 			 <?php require ($view);?>
 
 		</div>

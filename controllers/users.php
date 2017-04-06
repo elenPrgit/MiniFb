@@ -16,7 +16,7 @@ class users extends Controller{
 		unset($_SESSION['user_data']);
 		session_destroy();
 
-		header('Location '.ROOT_URL);
+		header('Location:'.ROOT_URL);
 
 	}
 

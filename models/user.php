@@ -5,18 +5,24 @@ class UserModel extends Model{
 
 		$password = md5($post['password']);
 		if($post['submit']){
-			// die('Submitted');
-			$this->query('INSERT INTO users (name, email, password) values (:name, :email, :password)');
-			$this->bind(':name', $post['name']);
-			$this->bind(':email', $post['email']);
-			$this->bind(':password', $password);
-			$this->execute();
 
-			if($this->lastInsertId()){
-				//REDIRECT
-				header('Location: '.ROOT_URL.'users/login');
+			if($post['name'] == '' || $post['email'] == '' || $post['password'] == ''){
+				Messages::setMsg('Please fill in all fields', 'error');
+			}  else {
+				// die('Submitted');
+				$this->query('INSERT INTO users (name, email, password) values (:name, :email, :password)');
+				$this->bind(':name', $post['name']);
+				$this->bind(':email', $post['email']);
+				$this->bind(':password', $password);
+				$this->execute();
 
+				if($this->lastInsertId()){
+					//REDIRECT
+					header('Location: '.ROOT_URL.'users/login');
+
+				}
 			}
+			
 		}
 	}
 
@@ -43,7 +49,7 @@ class UserModel extends Model{
 				header('Location: '.ROOT_URL.'shares');
 
 			} else {
-				echo 'not loggedin';
+				Messages::setMsg('Incorect Login', 'error');
 			}
 				//REDIRECT
 				//header('Location: '.ROOT_URL.'users/login');

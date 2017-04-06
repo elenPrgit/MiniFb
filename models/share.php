@@ -14,7 +14,7 @@ class ShareModel extends Model{
 		if($post['submit']){
 			$this->query('INSERT INTO shares (title, body, link, user_id) values (:title, :body, :link, :user_id)');
 			$this->bind(':title', $post['title']);
-			$this->bind(':body', $post['bo	dy']);
+			$this->bind(':body', $post['body']);
 			$this->bind(':link', $post['link']);
 			$this->bind(':user_id', 1);
 			$this->execute();
